@@ -1,29 +1,37 @@
 # KSI Collision Fatality Predictor
 
-A Streamlit app that predicts whether a Toronto traffic collision is likely to be **Fatal** or **Non-Fatal** using machine learning models trained on Toronto Police Service KSI data.
+An AI-powered Streamlit application that predicts whether a Toronto traffic collision is likely to be **Fatal** or **Non-Fatal** using supervised machine learning.
 
-Live app: [ksi-collision-fatality-predictor-rozhinasaberi.streamlit.app](https://ksi-collision-fatality-predictor-rozhinasaberi.streamlit.app/)
+Live demo: [ksi-collision-fatality-predictor-rozhinasaberi.streamlit.app](https://ksi-collision-fatality-predictor-rozhinasaberi.streamlit.app/)
 
-## Overview
+## Project Summary
 
-This project lets users enter collision details such as road class, district, visibility, light condition, road surface, impact type, hour of day, and involvement flags like speeding or alcohol. The app then returns:
+This project applies machine learning to Toronto Police Service KSI data to support collision severity prediction. Users can enter roadway, environmental, and incident-related factors through an interactive Streamlit interface and receive:
 
-- the predicted outcome
-- fatal probability
-- non-fatal probability
+- a predicted collision outcome
+- fatal and non-fatal probability scores
 - model confidence
+- side-by-side model selection for comparison
 
-The dataset referenced in the app is:
+The app is designed as a practical supervised learning project that demonstrates how classification models can be deployed in a user-facing interface.
 
-- Toronto Police Service KSI (2006-2023)
+## Dataset
 
-## Models Included
+- Toronto Police Service KSI dataset (2006-2023)
 
-- Support Vector Machine (`ksi_svm.pkl`) - best model
+## Machine Learning Models
+
+- Support Vector Machine (`ksi_svm.pkl`) - best-performing model
 - Decision Tree (`ksi_decision_tree.pkl`)
 - Random Forest (`ksi_random_forest.pkl`)
 
-Users can switch between models in the Streamlit interface and compare predictions.
+## Features
+
+- Interactive Streamlit web interface
+- Real-time collision outcome prediction
+- Model switching from the UI
+- Probability-based output for interpretability
+- Simple local setup and cloud deployment
 
 ## Tech Stack
 
@@ -31,17 +39,18 @@ Users can switch between models in the Streamlit interface and compare predictio
 - Streamlit
 - pandas
 - scikit-learn
+- SciPy
 - pickle
 
-## Project Files
+## Repository Structure
 
 - `app.py` - main Streamlit application
-- `requirements.txt` - Python dependencies
+- `requirements.txt` - project dependencies
 - `ksi_svm.pkl` - trained SVM model
 - `ksi_decision_tree.pkl` - trained decision tree model
 - `ksi_random_forest.pkl` - trained random forest model
 
-## Run Locally
+## Running The App Locally
 
 1. Clone the repository.
 2. Install dependencies:
@@ -50,20 +59,24 @@ Users can switch between models in the Streamlit interface and compare predictio
 pip install -r requirements.txt
 ```
 
-3. Start the app:
+3. Launch the Streamlit app:
 
 ```bash
 streamlit run app.py
 ```
 
-4. Open the local URL shown by Streamlit in your browser.
+4. Open the local URL provided by Streamlit in your browser.
 
-## How To Use
+## How It Works
 
-1. Choose a model from the dropdown.
-2. Enter the collision conditions and involvement flags.
+1. Select one of the trained machine learning models.
+2. Enter collision attributes such as road class, district, visibility, light condition, road surface, impact type, hour, and involvement flags.
 3. Click `Predict Outcome`.
-4. Review the predicted class and probability scores.
+4. Review the predicted class, probability scores, and model confidence.
+
+## Project Type
+
+This is an **AI / machine learning classification project**, specifically a **supervised learning web application** for collision fatality prediction.
 
 ## Authors
 
